@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_000000"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_user_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:hint="请输入用户ID"
+                android:textColor="@color/color_ffffff"
+                android:textColorHint="@color/color_ffffff"
+                android:textSize="@dimen/sp_16" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:orientation="horizontal">
+
+                <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                    android:id="@+id/tv_0"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_32"
+                    android:contentDescription="1"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/sp_16"
+                    app:checkedBackgroundResource="@drawable/shape_4_2883fb_border_1_ffffff"
+                    app:uncheckBackgroundResource="@drawable/shape_4_393939" />
+
+                <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                    android:id="@+id/tv_1"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_32"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:contentDescription="2"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/sp_16"
+                    app:checkedBackgroundResource="@drawable/shape_4_2883fb_border_1_ffffff"
+                    app:uncheckBackgroundResource="@drawable/shape_4_393939" />
+
+                <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                    android:id="@+id/tv_2"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_32"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:contentDescription="3"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/sp_16"
+                    app:checkedBackgroundResource="@drawable/shape_4_2883fb_border_1_ffffff"
+                    app:uncheckBackgroundResource="@drawable/shape_4_393939" />
+
+                <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                    android:id="@+id/tv_3"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_32"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:contentDescription="4"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/sp_16"
+                    app:checkedBackgroundResource="@drawable/shape_4_2883fb_border_1_ffffff"
+                    app:uncheckBackgroundResource="@drawable/shape_4_393939" />
+
+                <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                    android:id="@+id/tv_4"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_32"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:contentDescription="5"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/sp_16"
+                    app:checkedBackgroundResource="@drawable/shape_4_2883fb_border_1_ffffff"
+                    app:uncheckBackgroundResource="@drawable/shape_4_393939" />
+
+                <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                    android:id="@+id/tv_5"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_32"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:contentDescription="6"
+                    android:gravity="center"
+                    android:text="5"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/sp_16"
+                    app:checkedBackgroundResource="@drawable/shape_4_2883fb_border_1_ffffff"
+                    app:uncheckBackgroundResource="@drawable/shape_4_393939" />
+
+                <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                    android:id="@+id/tv_6"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_32"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:contentDescription="7"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/sp_16"
+                    app:checkedBackgroundResource="@drawable/shape_4_2883fb_border_1_ffffff"
+                    app:uncheckBackgroundResource="@drawable/shape_4_393939" />
+
+                <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                    android:id="@+id/tv_7"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_32"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:contentDescription="8"
+                    android:gravity="center"
+                    android:text="7"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/sp_16"
+                    app:checkedBackgroundResource="@drawable/shape_4_2883fb_border_1_ffffff"
+                    app:uncheckBackgroundResource="@drawable/shape_4_393939" />
+
+                <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                    android:id="@+id/tv_8"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_32"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:contentDescription="9"
+                    android:gravity="center"
+                    android:text="8"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/sp_16"
+                    app:checkedBackgroundResource="@drawable/shape_4_2883fb_border_1_ffffff"
+                    app:uncheckBackgroundResource="@drawable/shape_4_393939" />
+
+                <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                    android:id="@+id/tv_9"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_32"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:contentDescription="10"
+                    android:gravity="center"
+                    android:text="9"
+                    android:textColor="@color/color_ffffff"
+                    android:textSize="@dimen/sp_16"
+                    app:checkedBackgroundResource="@drawable/shape_4_2883fb_border_1_ffffff"
+                    app:uncheckBackgroundResource="@drawable/shape_4_393939" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                android:id="@+id/tv_login"
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="@dimen/dp_32"
+                android:layout_marginTop="@dimen/dp_20"
+                android:contentDescription="11"
+                android:gravity="center"
+                android:text="登录"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/sp_16"
+                app:checkedBackgroundResource="@drawable/shape_4_2883fb_border_1_ffffff"
+                app:uncheckBackgroundResource="@drawable/shape_4_393939" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.teamhelper.base.view.widget.InstructMenuWidget
+            android:id="@+id/instruct_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_10" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

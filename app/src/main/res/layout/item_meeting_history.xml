@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <com.teamhelper.base.view.widget.FrameLayoutWidget
+        android:layout_width="@dimen/dp_185"
+        android:layout_height="@dimen/dp_110"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:background="@color/color_000000"
+        app:checkedBackgroundResource="@mipmap/bg_meeting_card_selected"
+        app:uncheckBackgroundResource="@mipmap/bg_meeting_card_not_selected">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_meeting_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_28"
+                android:layout_marginLeft="@dimen/dp_11"
+                android:layout_marginRight="@dimen/dp_40"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/sp_14"
+                tools:text="房间名称信息" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_11"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_11"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ic_icon"
+                    android:layout_width="@dimen/dp_32"
+                    android:layout_height="@dimen/dp_32"
+                    android:src="@mipmap/ic_call_not_selected" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_meeting_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_ffffff"
+                        android:textSize="@dimen/sp_13" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_initiator"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:textColor="@color/color_ffffff"
+                        android:textSize="@dimen/sp_12" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_11"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="15:00-15:30"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/sp_12" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.teamhelper.base.view.widget.CornerMarkWidget
+            android:id="@+id/tv_corner_mark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/dp_3"
+            android:layout_marginRight="@dimen/dp_6"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/sp_16"
+            tools:text="1" />
+
+    </com.teamhelper.base.view.widget.FrameLayoutWidget>
+</layout>

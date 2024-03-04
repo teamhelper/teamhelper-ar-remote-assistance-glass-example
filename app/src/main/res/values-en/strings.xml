@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Glass-sdk-test</string>
+    <string name="text_meeting_today_list">Collaboration today</string>
+    <string name="toast_first_page">It\'s already the first page</string>
+    <string name="toast_last_page">It\'s the last page</string>
+    <string name="text_initiator">initiator：</string>
+    <string name="text_meeting_no">Room number：</string>
+</resources>

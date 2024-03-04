@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_000000"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_64"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_24"
+            android:paddingRight="@dimen/dp_24">
+
+            <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                android:id="@+id/tv_back"
+                android:layout_width="@dimen/dp_90"
+                android:layout_height="@dimen/dp_32"
+                android:contentDescription="1"
+                android:drawableLeft="@mipmap/ic_arrow_left"
+                android:drawablePadding="@dimen/dp_14"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_12"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/sp_14"
+                app:checkedBackgroundResource="@drawable/shape_4_2883fb"
+                app:uncheckBackgroundResource="@drawable/shape_4_80363636" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_title"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:layout_weight="1"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center_horizontal"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:maxLength="50"
+                android:singleLine="true"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/sp_18" />
+
+            <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                android:id="@+id/tv_history_meeting"
+                android:layout_width="@dimen/dp_90"
+                android:layout_height="@dimen/dp_32"
+                android:contentDescription="2"
+                android:gravity="center"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/sp_14"
+                app:checkedBackgroundResource="@drawable/shape_4_2883fb"
+                app:uncheckBackgroundResource="@drawable/shape_4_80363636" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <com.teamhelper.base.view.widget.RecyclerViewWidget
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_121"
+                android:layout_marginLeft="@dimen/dp_14"
+                android:layout_marginTop="@dimen/dp_55"
+                android:layout_marginRight="@dimen/dp_14" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.teamhelper.base.view.widget.InstructMenuWidget
+            android:id="@+id/instruct_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_10" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

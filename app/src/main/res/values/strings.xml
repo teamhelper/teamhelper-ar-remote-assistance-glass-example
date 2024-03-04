@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Glass-sdk-test</string>
+    <string name="text_meeting_today_list">今日协作</string>
+    <string name="toast_first_page">已经是第一页了</string>
+    <string name="toast_last_page">已经是最后一页了</string>
+    <string name="text_initiator">发起人：</string>
+    <string name="text_meeting_no">房间号：</string>
+</resources>
