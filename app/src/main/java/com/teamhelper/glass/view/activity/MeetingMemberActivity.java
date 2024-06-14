@@ -1,7 +1,9 @@
 package com.teamhelper.glass.view.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.teamhelper.base.view.activity.RootActivity;
@@ -12,6 +14,7 @@ import com.teamhelper.glass.enums.InstructSingle;
 import com.teamhelper.glass.utils.StringUtil;
 import com.teamhelper.glass.view.adapter.MeetingMemberAdapter;
 import com.teamhelper.meeting.bean.ContactsBean;
+import com.teamhelper.meeting.enums.InstructNumber;
 import com.teamhelper.meeting.manager.MeetingManager;
 
 import java.util.ArrayList;
@@ -47,7 +50,7 @@ public class MeetingMemberActivity extends RootActivity<ActivityMeetingMemberBin
         });
         slideEventViewManager.setCheckViewListener(dataBinding.tvBack);
         adapter = new MeetingMemberAdapter(activity, dataList);
-        adapter.setOnItemClickListener((v, position, itemData) -> {
+        adapter.setOnItemClickListener((v, position, itemData, instructNumber) -> {
             if (itemData.getCheckStatus() == ContactsBean.DISABLE) return;
             if (itemData.getCheckStatus() == ContactsBean.SELECTED) {
                 itemData.setCheckStatus(ContactsBean.UNSELECT);
@@ -62,10 +65,9 @@ public class MeetingMemberActivity extends RootActivity<ActivityMeetingMemberBin
         dataBinding.recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         dataBinding.recyclerView.setAdapter(adapter);
         dataBinding.recyclerView.onRenderComplete(unused -> {
+            slideEventViewManager.addInstructNumber(InstructNumber.SELECT);
             LinearLayoutCompatWidget llContent = (LinearLayoutCompatWidget) dataBinding.recyclerView.getLayoutManager().findViewByPosition(0);
             slideEventViewManager.setCheckViewListener(llContent);
         });
     }
-
-
 }

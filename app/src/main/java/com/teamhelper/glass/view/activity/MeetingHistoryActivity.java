@@ -1,6 +1,9 @@
 
 package com.teamhelper.glass.view.activity;
 
+import android.os.Bundle;
+
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.teamhelper.base.view.activity.RootActivity;
@@ -12,6 +15,7 @@ import com.teamhelper.glass.utils.ToastUtil;
 import com.teamhelper.glass.view.adapter.MeetingHistoryAdapter;
 import com.teamhelper.meeting.bean.meeting.MeetingBean;
 import com.teamhelper.meeting.bean.meeting.MeetingHistoryBean;
+import com.teamhelper.meeting.enums.InstructNumber;
 import com.teamhelper.meeting.interfaces.IMeetingCallback;
 import com.teamhelper.meeting.manager.MeetingManager;
 
@@ -37,11 +41,12 @@ public class MeetingHistoryActivity extends RootActivity<ActivityMeetingHistoryB
         instructManager.addInstruct(InstructSingle.BACK, dataBinding.tvBack);
         dataBinding.tvTitle.setText(InstructSingle.HISTORY_MEETING.getInstruct());
         adapter = new MeetingHistoryAdapter(activity, dataList);
-        adapter.setOnItemClickListener((v, position, itemData) -> {
+        adapter.setOnItemClickListener((v, position, itemData, instructNumber) -> {
             MeetingManager.jumpToMessageActivity(activity, itemData.getGroupId(), itemData.getMeetingName());
         });
         dataBinding.recyclerView.setLayoutManager(new GridLayoutManager(activity, 3));
         dataBinding.recyclerView.setAdapter(adapter);
+        slideEventViewManager.addInstructNumber(InstructNumber.SELECT);
         slideEventViewManager.setCheckViewListener(dataBinding.tvBack);
         dataBinding.instructMenu.setInstructManager(instructManager);
         dataBinding.instructMenu.addInstruct(InstructSingle.PREVIOUS_PAGE, v -> {

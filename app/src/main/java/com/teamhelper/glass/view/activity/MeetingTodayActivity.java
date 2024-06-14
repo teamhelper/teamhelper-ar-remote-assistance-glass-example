@@ -1,6 +1,7 @@
 package com.teamhelper.glass.view.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,6 +16,7 @@ import com.teamhelper.glass.utils.ToastUtil;
 import com.teamhelper.glass.view.adapter.MeetingTodayAdapter;
 import com.teamhelper.meeting.bean.meeting.MeetingBean;
 import com.teamhelper.meeting.bean.meeting.MeetingDetailBean;
+import com.teamhelper.meeting.enums.InstructNumber;
 import com.teamhelper.meeting.interfaces.IMeetingCallback;
 import com.teamhelper.meeting.manager.MeetingManager;
 import com.teamhelper.tools.ActivityStackManager;
@@ -47,9 +49,10 @@ public class MeetingTodayActivity extends RootActivity<ActivityMeetingTodayBindi
             IntentManager.build(MeetingHistoryActivity.class).startActivity(activity);
         });
         instructManager.addInstruct(InstructSingle.HISTORY_MEETING, dataBinding.tvHistoryMeeting);
+        slideEventViewManager.addInstructNumber(InstructNumber.SELECT);
         slideEventViewManager.setCheckViewListener(dataBinding.tvBack);
         adapter = new MeetingTodayAdapter(activity, dataList);
-        adapter.setOnItemClickListener((v, position, itemData) -> joinMeeting(itemData.getMeetingNo()));
+        adapter.setOnItemClickListener((v, position, itemData, instructNumber) -> joinMeeting(itemData.getMeetingNo()));
         dataBinding.recyclerView.setLayoutManager(new LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false));
         dataBinding.recyclerView.setAdapter(adapter);
 

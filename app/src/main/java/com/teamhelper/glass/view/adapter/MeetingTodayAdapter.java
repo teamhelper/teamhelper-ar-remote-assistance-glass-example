@@ -8,11 +8,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 
+import com.teamhelper.base.interfaces.ICornerMarkOnItemClickListener;
 import com.teamhelper.base.interfaces.ISlideEventViewStateListener;
 import com.teamhelper.base.view.widget.FrameLayoutWidget;
 import com.teamhelper.glass.R;
 import com.teamhelper.glass.databinding.ItemMeetingTodayBinding;
-import com.teamhelper.glass.interfaces.IOnItemClickListener;
 import com.teamhelper.glass.view.holder.BaseViewHolder;
 import com.teamhelper.meeting.bean.meeting.MeetingBean;
 
@@ -21,14 +21,14 @@ import java.util.List;
 public class MeetingTodayAdapter extends BaseRecyclerAdapter<BaseViewHolder> {
     private final Context context;
     private final List<MeetingBean> dataList;
-    private IOnItemClickListener<MeetingBean> onItemClickListener;
+    private ICornerMarkOnItemClickListener<MeetingBean> onItemClickListener;
 
     public MeetingTodayAdapter(Context context, List<MeetingBean> dataList) {
         this.context = context;
         this.dataList = dataList;
     }
 
-    public void setOnItemClickListener(IOnItemClickListener<MeetingBean> onItemClickListener) {
+    public void setOnItemClickListener(ICornerMarkOnItemClickListener<MeetingBean> onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
 
@@ -49,7 +49,9 @@ public class MeetingTodayAdapter extends BaseRecyclerAdapter<BaseViewHolder> {
         FrameLayoutWidget root = (FrameLayoutWidget) binding.getRoot();
         root.setContentDescription(String.valueOf(position + 1 + 2));
         root.setOnClickListener(v -> {
-            if (onItemClickListener != null) onItemClickListener.onItemClick(v, position, item);
+            if (onItemClickListener != null) {
+                onItemClickListener.onItemClick(v, position, item, root.getInstructNumber());
+            }
         });
         root.setSlideEventViewStateListener(new ISlideEventViewStateListener() {
             @Override
