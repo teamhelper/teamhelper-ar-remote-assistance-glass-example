@@ -6,7 +6,7 @@
 
     </data>
 
-    <com.teamhelper.base.view.widget.LinearLayoutCompatWidget
+    <com.mst.basics.slide.widget.LinearLayoutCompatWidget
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/color_000000"
@@ -21,7 +21,7 @@
             android:paddingRight="@dimen/dp_24"
             android:translationZ="@dimen/dp_99">
 
-            <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+            <com.mst.basics.slide.widget.AppCompatTextViewWidget
                 android:id="@+id/tv_back"
                 android:layout_width="@dimen/dp_90"
                 android:layout_height="@dimen/dp_32"
@@ -52,7 +52,7 @@
                 android:textColor="@color/color_ffffff"
                 android:textSize="@dimen/sp_18" />
 
-            <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+            <com.mst.basics.slide.widget.AppCompatTextViewWidget
                 android:id="@+id/tv_confirm"
                 android:layout_width="@dimen/dp_90"
                 android:layout_height="@dimen/dp_32"
@@ -64,12 +64,12 @@
                 app:uncheckBackgroundResource="@drawable/shape_4_80363636" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <com.teamhelper.base.view.widget.RecyclerViewWidget
+        <com.mst.basics.slide.widget.RecyclerViewWidget
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/dp_14"
             android:layout_marginRight="@dimen/dp_14"
             android:layout_weight="1" />
-    </com.teamhelper.base.view.widget.LinearLayoutCompatWidget>
+    </com.mst.basics.slide.widget.LinearLayoutCompatWidget>
 </layout>

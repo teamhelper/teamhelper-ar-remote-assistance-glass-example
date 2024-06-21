@@ -1,11 +1,10 @@
 package com.teamhelper.glass.view.activity;
 
-import com.teamhelper.base.view.activity.RootActivity;
-import com.teamhelper.glass.BuildConfig;
+import com.mst.basics.base.view.activity.GlassBaseActivity;
+import com.teamhelper.base.mvvm.databinding.viewmodel.EmptyViewModel;
 import com.teamhelper.glass.Config;
-import com.teamhelper.glass.R;
+import com.teamhelper.glass.constants.Instruct;
 import com.teamhelper.glass.databinding.ActivityLoginBinding;
-import com.teamhelper.glass.enums.InstructSingle;
 import com.teamhelper.glass.manager.IntentManager;
 import com.teamhelper.glass.utils.StringUtil;
 import com.teamhelper.glass.utils.ToastUtil;
@@ -14,76 +13,81 @@ import com.teamhelper.meeting.interfaces.IMeetingCallback;
 import com.teamhelper.meeting.manager.MeetingManager;
 import com.teamhelper.tools.ActivityStackManager;
 
-public class LoginActivity extends RootActivity<ActivityLoginBinding> {
+public class LoginActivity extends GlassBaseActivity<ActivityLoginBinding, EmptyViewModel> {
     public static UserBean userBean;
 
     @Override
-    public int getLayout() {
-        return R.layout.activity_login;
+    public void initData() {
+
     }
 
     @Override
-    public void onCreate() {
-        instructManager.addInstruct(InstructSingle.INPUT_0, dataBinding.tv0);
-        dataBinding.tv0.setOnClickListener(view -> {
-            dataBinding.tvUserId.append("0");
+    public void initParams() {
+
+    }
+
+    @Override
+    public void initView() {
+        instructManager.addInstruct(Instruct.INPUT_0, v.tv0);
+        v.tv0.setOnClickListener(view -> {
+            v.tvUserId.append("0");
         });
-        instructManager.addInstruct(InstructSingle.INPUT_1, dataBinding.tv1);
-        dataBinding.tv1.setOnClickListener(view -> {
-            dataBinding.tvUserId.append("1");
+        instructManager.addInstruct(Instruct.INPUT_1, v.tv1);
+        v.tv1.setOnClickListener(view -> {
+            v.tvUserId.append("1");
         });
-        instructManager.addInstruct(InstructSingle.INPUT_2, dataBinding.tv2);
-        dataBinding.tv2.setOnClickListener(view -> {
-            dataBinding.tvUserId.append("2");
+        instructManager.addInstruct(Instruct.INPUT_2, v.tv2);
+        v.tv2.setOnClickListener(view -> {
+            v.tvUserId.append("2");
         });
-        instructManager.addInstruct(InstructSingle.INPUT_3, dataBinding.tv3);
-        dataBinding.tv3.setOnClickListener(view -> {
-            dataBinding.tvUserId.append("3");
+        instructManager.addInstruct(Instruct.INPUT_3, v.tv3);
+        v.tv3.setOnClickListener(view -> {
+            v.tvUserId.append("3");
         });
-        instructManager.addInstruct(InstructSingle.INPUT_4, dataBinding.tv4);
-        dataBinding.tv4.setOnClickListener(view -> {
-            dataBinding.tvUserId.append("4");
+        instructManager.addInstruct(Instruct.INPUT_4, v.tv4);
+        v.tv4.setOnClickListener(view -> {
+            v.tvUserId.append("4");
         });
-        instructManager.addInstruct(InstructSingle.INPUT_5, dataBinding.tv5);
-        dataBinding.tv5.setOnClickListener(view -> {
-            dataBinding.tvUserId.append("5");
+        instructManager.addInstruct(Instruct.INPUT_5, v.tv5);
+        v.tv5.setOnClickListener(view -> {
+            v.tvUserId.append("5");
         });
-        instructManager.addInstruct(InstructSingle.INPUT_6, dataBinding.tv6);
-        dataBinding.tv6.setOnClickListener(view -> {
-            dataBinding.tvUserId.append("6");
+        instructManager.addInstruct(Instruct.INPUT_6, v.tv6);
+        v.tv6.setOnClickListener(view -> {
+            v.tvUserId.append("6");
         });
-        instructManager.addInstruct(InstructSingle.INPUT_7, dataBinding.tv7);
-        dataBinding.tv7.setOnClickListener(view -> {
-            dataBinding.tvUserId.append("7");
+        instructManager.addInstruct(Instruct.INPUT_7, v.tv7);
+        v.tv7.setOnClickListener(view -> {
+            v.tvUserId.append("7");
         });
-        instructManager.addInstruct(InstructSingle.INPUT_8, dataBinding.tv8);
-        dataBinding.tv8.setOnClickListener(view -> {
-            dataBinding.tvUserId.append("8");
+        instructManager.addInstruct(Instruct.INPUT_8, v.tv8);
+        v.tv8.setOnClickListener(view -> {
+            v.tvUserId.append("8");
         });
-        instructManager.addInstruct(InstructSingle.INPUT_9, dataBinding.tv9);
-        dataBinding.tv9.setOnClickListener(view -> {
-            dataBinding.tvUserId.append("9");
+        instructManager.addInstruct(Instruct.INPUT_9, v.tv9);
+        v.tv9.setOnClickListener(view -> {
+            v.tvUserId.append("9");
         });
-        instructManager.addInstruct(InstructSingle.LOGIN, dataBinding.tvLogin);
-        dataBinding.tvLogin.setOnClickListener(v -> {
-            String userId = dataBinding.tvUserId.getText().toString();
+        instructManager.addInstruct(Instruct.LOGIN, v.tvLogin);
+        v.tvLogin.setOnClickListener(view -> {
+            String userId = v.tvUserId.getText().toString();
             if (StringUtil.isEmpty(userId)) {
-                ToastUtil.showToast(activity, "请输入用户ID");
+                ToastUtil.showToast(getMContext(), "请输入用户ID");
                 return;
             }
             if (StringUtil.isEmpty(Config.APP_KEY)) {
-                ToastUtil.showToast(activity, "请配置appKey");
+                ToastUtil.showToast(getMContext(), "请配置appKey");
                 return;
             }
             if (StringUtil.isEmpty(Config.ACCESS_KEY)) {
-                ToastUtil.showToast(activity, "请配置accessKey");
+                ToastUtil.showToast(getMContext(), "请配置accessKey");
                 return;
             }
             if (StringUtil.isEmpty(Config.ACCESS_SECRET)) {
-                ToastUtil.showToast(activity, "请配置accessSecret");
+                ToastUtil.showToast(getMContext(), "请配置accessSecret");
                 return;
             }
-            showLoading();
+            showLoading("Loading...");
             //5个小时后token到期
             long timestamp = System.currentTimeMillis() + (5 * 60 * 60 * 1000);
             MeetingManager.exampleLogin(userId, Config.APP_KEY, Config.ACCESS_KEY, Config.ACCESS_SECRET, timestamp, new IMeetingCallback<UserBean>() {
@@ -91,35 +95,40 @@ public class LoginActivity extends RootActivity<ActivityLoginBinding> {
                 public void onSuccess(UserBean data) {
                     dismissLoading();
                     userBean = data;
-                    IntentManager.build(MeetingTodayActivity.class).startActivity(activity);
+                    IntentManager.build(MeetingTodayActivity.class).startActivity(getMContext());
                     finish();
                 }
 
                 @Override
                 public void onError(int code, String message) {
                     dismissLoading();
-                    ToastUtil.showToast(activity, message);
+                    ToastUtil.showToast(getMContext(), message);
                 }
             });
         });
-        dataBinding.instructMenu.setInstructManager(instructManager);
-        dataBinding.instructMenu.addInstruct(InstructSingle.UNDO, v -> {
-            String value = dataBinding.tvUserId.getText().toString();
+        v.instructMenu.setInstructManager(instructManager);
+        v.instructMenu.addInstruct(Instruct.UNDO, view -> {
+            String value = v.tvUserId.getText().toString();
             if (StringUtil.isEmpty(value)) return;
             if (value.length() == 1) {
                 value = "";
             } else {
                 value = value.substring(0, value.length() - 1);
             }
-            dataBinding.tvUserId.setText(value);
+            v.tvUserId.setText(value);
         });
-        dataBinding.instructMenu.addInstruct(InstructSingle.DELETE_CONTENT, v -> {
-            dataBinding.tvUserId.setText("");
+        v.instructMenu.addInstruct(Instruct.DELETE_CONTENT, view -> {
+            v.tvUserId.setText("");
         });
-        dataBinding.instructMenu.addInstruct(InstructSingle.EXIT, v -> {
+        v.instructMenu.addInstruct(Instruct.EXIT, view -> {
             ActivityStackManager.getInstance().finishAllActivity();
         });
-        slideEventViewManager.setCheckViewListener(dataBinding.tv0);
+        slideEventViewManager.setCheckViewListener(v.tv0);
+    }
+
+    @Override
+    public void registerObserve() {
+
     }
 
     @Override

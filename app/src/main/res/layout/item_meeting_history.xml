@@ -7,7 +7,7 @@
 
     </data>
 
-    <com.teamhelper.base.view.widget.FrameLayoutWidget
+    <com.mst.basics.slide.widget.FrameLayoutWidget
         android:layout_width="@dimen/dp_185"
         android:layout_height="@dimen/dp_110"
         android:layout_marginLeft="@dimen/dp_10"
@@ -86,7 +86,7 @@
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <com.teamhelper.base.view.widget.CornerMarkWidget
+        <com.mst.basics.slide.widget.CornerMarkWidget
             android:id="@+id/tv_corner_mark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -97,5 +97,5 @@
             android:textSize="@dimen/sp_16"
             tools:text="1" />
 
-    </com.teamhelper.base.view.widget.FrameLayoutWidget>
+    </com.mst.basics.slide.widget.FrameLayoutWidget>
 </layout>

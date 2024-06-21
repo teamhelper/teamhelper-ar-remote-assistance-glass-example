@@ -1,28 +1,28 @@
 
 package com.teamhelper.glass.view.activity;
 
-import android.os.Bundle;
+import android.view.View;
 
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
 
-import com.teamhelper.base.view.activity.RootActivity;
-import com.teamhelper.base.view.widget.FrameLayoutWidget;
+import com.mst.basics.base.view.activity.GlassBaseActivity;
+import com.mst.basics.slide.widget.FrameLayoutWidget;
+import com.teamhelper.base.mvvm.databinding.view.adapter.BaseRecyclerViewAdapter;
+import com.teamhelper.base.mvvm.databinding.viewmodel.EmptyViewModel;
 import com.teamhelper.glass.R;
+import com.teamhelper.glass.constants.Instruct;
 import com.teamhelper.glass.databinding.ActivityMeetingHistoryBinding;
-import com.teamhelper.glass.enums.InstructSingle;
 import com.teamhelper.glass.utils.ToastUtil;
 import com.teamhelper.glass.view.adapter.MeetingHistoryAdapter;
 import com.teamhelper.meeting.bean.meeting.MeetingBean;
 import com.teamhelper.meeting.bean.meeting.MeetingHistoryBean;
-import com.teamhelper.meeting.enums.InstructNumber;
 import com.teamhelper.meeting.interfaces.IMeetingCallback;
 import com.teamhelper.meeting.manager.MeetingManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MeetingHistoryActivity extends RootActivity<ActivityMeetingHistoryBinding> {
+public class MeetingHistoryActivity extends GlassBaseActivity<ActivityMeetingHistoryBinding, EmptyViewModel> {
     private final int PAGE_SIZE = 6;
     private int pageNum = 1;
     private int totalPage;
@@ -30,41 +30,54 @@ public class MeetingHistoryActivity extends RootActivity<ActivityMeetingHistoryB
     private MeetingHistoryAdapter adapter;
 
     @Override
-    public int getLayout() {
-        return R.layout.activity_meeting_history;
+    public void initData() {
+
     }
 
     @Override
-    public void onCreate() {
-        dataBinding.tvBack.setText(InstructSingle.BACK.getInstruct());
-        dataBinding.tvBack.setOnClickListener(v -> finish());
-        instructManager.addInstruct(InstructSingle.BACK, dataBinding.tvBack);
-        dataBinding.tvTitle.setText(InstructSingle.HISTORY_MEETING.getInstruct());
-        adapter = new MeetingHistoryAdapter(activity, dataList);
-        adapter.setOnItemClickListener((v, position, itemData, instructNumber) -> {
-            MeetingManager.jumpToMessageActivity(activity, itemData.getGroupId(), itemData.getMeetingName());
+    public void initParams() {
+
+    }
+
+    @Override
+    public void initView() {
+        v.tvBack.setText(Instruct.BACK.getInstruct());
+        v.tvBack.setOnClickListener(v -> finish());
+        instructManager.addInstruct(Instruct.BACK, v.tvBack);
+        v.tvTitle.setText(Instruct.HISTORY_MEETING.getInstruct());
+        adapter = new MeetingHistoryAdapter(getMContext(), dataList);
+        adapter.setOnItemClickListener(new BaseRecyclerViewAdapter.OnItemClickListener<MeetingBean>() {
+            @Override
+            public void onItemClick(View view, int i, MeetingBean meetingBean) {
+                super.onItemClick(view, i, meetingBean);
+                MeetingManager.jumpToMessageActivity(getMContext(), meetingBean.getGroupId(), meetingBean.getMeetingName());
+            }
         });
-        dataBinding.recyclerView.setLayoutManager(new GridLayoutManager(activity, 3));
-        dataBinding.recyclerView.setAdapter(adapter);
-        slideEventViewManager.addInstructNumber(InstructNumber.SELECT);
-        slideEventViewManager.setCheckViewListener(dataBinding.tvBack);
-        dataBinding.instructMenu.setInstructManager(instructManager);
-        dataBinding.instructMenu.addInstruct(InstructSingle.PREVIOUS_PAGE, v -> {
+        v.recyclerView.setLayoutManager(new GridLayoutManager(getMContext(), 3));
+        v.recyclerView.setAdapter(adapter);
+        slideEventViewManager.setCheckViewListener(v.tvBack);
+        v.instructMenu.setInstructManager(instructManager);
+        v.instructMenu.addInstruct(Instruct.PREVIOUS_PAGE, v -> {
             if (pageNum <= 1) {
-                ToastUtil.showToast(activity, R.string.toast_first_page);
+                ToastUtil.showToast(getMContext(), R.string.toast_first_page);
                 return;
             }
             pageNum--;
             getMeetingHistory();
         });
-        dataBinding.instructMenu.addInstruct(InstructSingle.NEXT_PAGE, v -> {
+        v.instructMenu.addInstruct(Instruct.NEXT_PAGE, v -> {
             if (pageNum >= totalPage) {
-                ToastUtil.showToast(activity, R.string.toast_last_page);
+                ToastUtil.showToast(getMContext(), R.string.toast_last_page);
                 return;
             }
             pageNum++;
             getMeetingHistory();
         });
+    }
+
+    @Override
+    public void registerObserve() {
+
     }
 
     @Override
@@ -82,17 +95,22 @@ public class MeetingHistoryActivity extends RootActivity<ActivityMeetingHistoryB
                 pageNum = data.getPageNum();
                 dataList.clear();
                 data.getData().forEach(item -> dataList.addAll(item.getMeetingList()));
-                adapter.refresh();
-                dataBinding.recyclerView.onRenderComplete(unused -> {
-                    FrameLayoutWidget widget = (FrameLayoutWidget) dataBinding.recyclerView.getLayoutManager().findViewByPosition(0);
+                adapter.refreshData();
+                if (dataList.size() == 0) {
+                    slideEventViewManager.setCheckViewListener(v.tvBack);
+                    return;
+                }
+                v.recyclerView.onRenderComplete(unused -> {
+                    FrameLayoutWidget widget = (FrameLayoutWidget) v.recyclerView.getLayoutManager().findViewByPosition(0);
                     slideEventViewManager.setCheckViewListener(widget);
                 });
             }
 
             @Override
             public void onError(int code, String message) {
-                ToastUtil.showToast(activity, message);
+                ToastUtil.showToast(getMContext(), message);
             }
         });
     }
+
 }

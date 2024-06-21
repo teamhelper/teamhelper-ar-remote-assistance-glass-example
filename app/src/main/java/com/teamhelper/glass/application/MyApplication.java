@@ -1,18 +1,15 @@
 package com.teamhelper.glass.application;
 
 import android.app.Activity;
-import android.app.Application;
 
-import com.teamhelper.glass.BuildConfig;
+import com.mst.basics.GlassBaseApplication;
 import com.teamhelper.glass.Config;
 import com.teamhelper.glass.manager.IntentManager;
 import com.teamhelper.glass.view.activity.LoginActivity;
-import com.teamhelper.im.IMConfig;
-import com.teamhelper.meeting.MeetingConfig;
 import com.teamhelper.meeting.manager.MeetingManager;
 import com.teamhelper.tools.ActivityStackManager;
 
-public class MyApplication extends Application {
+public class MyApplication extends GlassBaseApplication {
 
     @Override
     public void onCreate() {

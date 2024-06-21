@@ -32,7 +32,7 @@
                 android:layout_marginTop="@dimen/dp_20"
                 android:orientation="horizontal">
 
-                <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                <com.mst.basics.slide.widget.AppCompatTextViewWidget
                     android:id="@+id/tv_0"
                     android:layout_width="@dimen/dp_40"
                     android:layout_height="@dimen/dp_32"
@@ -44,7 +44,7 @@
                     app:checkedBackgroundResource="@drawable/shape_4_2883fb_border_1_ffffff"
                     app:uncheckBackgroundResource="@drawable/shape_4_393939" />
 
-                <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                <com.mst.basics.slide.widget.AppCompatTextViewWidget
                     android:id="@+id/tv_1"
                     android:layout_width="@dimen/dp_40"
                     android:layout_height="@dimen/dp_32"
@@ -57,7 +57,7 @@
                     app:checkedBackgroundResource="@drawable/shape_4_2883fb_border_1_ffffff"
                     app:uncheckBackgroundResource="@drawable/shape_4_393939" />
 
-                <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                <com.mst.basics.slide.widget.AppCompatTextViewWidget
                     android:id="@+id/tv_2"
                     android:layout_width="@dimen/dp_40"
                     android:layout_height="@dimen/dp_32"
@@ -70,7 +70,7 @@
                     app:checkedBackgroundResource="@drawable/shape_4_2883fb_border_1_ffffff"
                     app:uncheckBackgroundResource="@drawable/shape_4_393939" />
 
-                <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                <com.mst.basics.slide.widget.AppCompatTextViewWidget
                     android:id="@+id/tv_3"
                     android:layout_width="@dimen/dp_40"
                     android:layout_height="@dimen/dp_32"
@@ -83,7 +83,7 @@
                     app:checkedBackgroundResource="@drawable/shape_4_2883fb_border_1_ffffff"
                     app:uncheckBackgroundResource="@drawable/shape_4_393939" />
 
-                <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                <com.mst.basics.slide.widget.AppCompatTextViewWidget
                     android:id="@+id/tv_4"
                     android:layout_width="@dimen/dp_40"
                     android:layout_height="@dimen/dp_32"
@@ -96,7 +96,7 @@
                     app:checkedBackgroundResource="@drawable/shape_4_2883fb_border_1_ffffff"
                     app:uncheckBackgroundResource="@drawable/shape_4_393939" />
 
-                <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                <com.mst.basics.slide.widget.AppCompatTextViewWidget
                     android:id="@+id/tv_5"
                     android:layout_width="@dimen/dp_40"
                     android:layout_height="@dimen/dp_32"
@@ -109,7 +109,7 @@
                     app:checkedBackgroundResource="@drawable/shape_4_2883fb_border_1_ffffff"
                     app:uncheckBackgroundResource="@drawable/shape_4_393939" />
 
-                <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                <com.mst.basics.slide.widget.AppCompatTextViewWidget
                     android:id="@+id/tv_6"
                     android:layout_width="@dimen/dp_40"
                     android:layout_height="@dimen/dp_32"
@@ -122,7 +122,7 @@
                     app:checkedBackgroundResource="@drawable/shape_4_2883fb_border_1_ffffff"
                     app:uncheckBackgroundResource="@drawable/shape_4_393939" />
 
-                <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                <com.mst.basics.slide.widget.AppCompatTextViewWidget
                     android:id="@+id/tv_7"
                     android:layout_width="@dimen/dp_40"
                     android:layout_height="@dimen/dp_32"
@@ -135,7 +135,7 @@
                     app:checkedBackgroundResource="@drawable/shape_4_2883fb_border_1_ffffff"
                     app:uncheckBackgroundResource="@drawable/shape_4_393939" />
 
-                <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                <com.mst.basics.slide.widget.AppCompatTextViewWidget
                     android:id="@+id/tv_8"
                     android:layout_width="@dimen/dp_40"
                     android:layout_height="@dimen/dp_32"
@@ -148,7 +148,7 @@
                     app:checkedBackgroundResource="@drawable/shape_4_2883fb_border_1_ffffff"
                     app:uncheckBackgroundResource="@drawable/shape_4_393939" />
 
-                <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+                <com.mst.basics.slide.widget.AppCompatTextViewWidget
                     android:id="@+id/tv_9"
                     android:layout_width="@dimen/dp_40"
                     android:layout_height="@dimen/dp_32"
@@ -163,7 +163,7 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <com.teamhelper.base.view.widget.AppCompatTextViewWidget
+            <com.mst.basics.slide.widget.AppCompatTextViewWidget
                 android:id="@+id/tv_login"
                 android:layout_width="@dimen/dp_200"
                 android:layout_height="@dimen/dp_32"
@@ -177,7 +177,7 @@
                 app:uncheckBackgroundResource="@drawable/shape_4_393939" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <com.teamhelper.base.view.widget.InstructMenuWidget
+        <com.mst.basics.slide.widget.InstructMenuWidget
             android:id="@+id/instruct_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

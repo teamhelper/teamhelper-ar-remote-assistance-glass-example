@@ -14,7 +14,7 @@
 
     </data>
 
-    <com.teamhelper.base.view.widget.LinearLayoutCompatWidget
+    <com.mst.basics.slide.widget.LinearLayoutCompatWidget
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_44"
         android:layout_marginBottom="@dimen/dp_10"
@@ -48,7 +48,7 @@
             android:textColor="@color/color_ffffff"
             android:textSize="@dimen/sp_13" />
 
-        <com.teamhelper.base.view.widget.CornerMarkWidget
+        <com.mst.basics.slide.widget.CornerMarkWidget
             android:id="@+id/tv_corner_mark"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -56,5 +56,5 @@
             android:layout_marginRight="@dimen/dp_3"
             android:textColor="@color/color_ffffff"
             android:textSize="@dimen/sp_14" />
-    </com.teamhelper.base.view.widget.LinearLayoutCompatWidget>
+    </com.mst.basics.slide.widget.LinearLayoutCompatWidget>
 </layout>
