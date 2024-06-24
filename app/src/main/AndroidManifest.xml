@@ -22,6 +22,7 @@
         tools:replace="label,allowBackup,icon,theme">
         <activity
             android:name=".view.activity.LoginActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|navigation"
             android:exported="true"
             android:screenOrientation="unspecified">
             <intent-filter>
@@ -33,16 +34,19 @@
 
         <activity
             android:name=".view.activity.MeetingTodayActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|navigation"
             android:exported="true"
             android:screenOrientation="unspecified" />
 
         <activity
             android:name=".view.activity.MeetingMemberActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|navigation"
             android:exported="true"
             android:screenOrientation="unspecified" />
 
         <activity
             android:name=".view.activity.MeetingHistoryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|navigation"
             android:exported="true"
             android:screenOrientation="unspecified" />
     </application>
